@@ -1,14 +1,18 @@
 using CommandAPINEW.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<CommanderContext>(options => options.UseSqlServer
+       (builder.Configuration.GetConnectionString("CommaderConnection")));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IcommandRepo, MockCommanderRepo>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IcommandRepo, SqlCommanderRepo>();
 
 
 var app = builder.Build();
