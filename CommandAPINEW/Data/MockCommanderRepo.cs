@@ -11,6 +11,11 @@ namespace CommandAPINEW.Data
             throw new NotImplementedException();
         }
 
+        public void DeleteCommand(CommandModel cmd)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<CommandModel> GetAllCommands()
         {
             var commandlist = new List<CommandModel>

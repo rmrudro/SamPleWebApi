@@ -21,6 +21,16 @@ namespace CommandAPINEW.Data
             _context.SaveChanges();
         }
 
+        public void DeleteCommand(CommandModel cmd)
+        {
+            if (cmd == null)
+            {
+                throw new ArgumentNullException(nameof(cmd));
+            }
+            _context.commands.Remove(cmd);
+
+        }
+
         public IEnumerable<CommandModel> GetAllCommands()
         {
             return _context.commands.ToList();

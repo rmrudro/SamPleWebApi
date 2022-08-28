@@ -10,6 +10,8 @@ namespace CommandAPINEW.Data
         void  CreateCommand(CommandModel cmd);
         
         void UpdateCommand(CommandModel cmd);
+        void DeleteCommand(CommandModel cmd);
+
 
     }
 }
