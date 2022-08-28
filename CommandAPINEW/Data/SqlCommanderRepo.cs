@@ -10,6 +10,17 @@ namespace CommandAPINEW.Data
         {
             _context = context;
         }
+
+        public void CreateCommand(CommandModel cmd)
+        {
+            if(cmd == null)
+            {
+                throw new ArgumentNullException(nameof(cmd));
+            }
+            _context.commands.Add(cmd);
+            _context.SaveChanges();
+        }
+
         public IEnumerable<CommandModel> GetAllCommands()
         {
             return _context.commands.ToList();
@@ -18,6 +29,11 @@ namespace CommandAPINEW.Data
         public CommandModel GetNewCommandById(int id)
         {
             return _context.commands.FirstOrDefault(p => p.Id == id);
+        }
+
+        public bool SaveChanges()
+        {
+           return(_context.SaveChanges() >=0);
         }
     }
 }

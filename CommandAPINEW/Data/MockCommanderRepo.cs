@@ -5,6 +5,12 @@ namespace CommandAPINEW.Data
     public class MockCommanderRepo : IcommandRepo
     {
         private readonly CommanderContext _context;
+
+        public void CreateCommand(CommandModel cmd)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<CommandModel> GetAllCommands()
         {
             var commandlist = new List<CommandModel>
@@ -19,6 +25,11 @@ namespace CommandAPINEW.Data
         public CommandModel GetNewCommandById(int id)
         {
             return new CommandModel { Id = id, Howto = "To Boil Egg", Line = "Boil Water", Platform = "Kettle a pan" };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }
