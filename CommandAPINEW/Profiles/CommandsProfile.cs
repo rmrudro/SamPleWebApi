@@ -11,6 +11,7 @@ namespace CommandAPINEW.Profiles
             //source -> Target
             CreateMap<CommandModel, CommandReadDto>();
             CreateMap<CommandCreateDto,CommandModel>();
+            CreateMap<CommandUpdateDto,CommandModel>();
         }
     }
 }

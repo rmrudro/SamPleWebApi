@@ -31,5 +31,10 @@ namespace CommandAPINEW.Data
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateCommand(CommandModel cmd)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace CommandAPINEW.Data
         {
            return(_context.SaveChanges() >=0);
         }
+
+        public void UpdateCommand(CommandModel cmd)
+        {
+            
+        }
     }
 }
